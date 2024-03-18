@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }} | La boutique Française{% endblock %}
+
+{% block content %}
+    <h1>{{ product.name }}</h1>
+
+    <div class="row product-container">
+            <div class="col-md-4 mt-5">
+                <div class="product-item text-center">
+                    <img src="/assets/images/products-images/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
+                    <h5> {{ product.name }}</h5>
+                    <span class="product-subtitle"> {{ product.subtitle }}</span>
+                    <span class="product-price">{{ (product.price/100) | format_currency('EUR') | number_format(2, ',') }}</span>
+                </div>
+                <a href="#" class="btn btn-primary">Ajouter au panier</a>
+            </div>
+    </div>
+
+{% endblock %}
